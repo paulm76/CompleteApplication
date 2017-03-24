@@ -29,7 +29,7 @@
 
 
     <TextView
-        android:text="@string/titleHome"
+        android:text="Welcome to Youtube 2.0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -39,9 +39,8 @@
         android:id="@+id/textView"
         android:textSize="36sp"
         android:textAlignment="center"
-        tools:textColor="@android:color/holo_red_dark"
-        tools:textColorHighlight="@android:color/holo_red_light"
-        tools:textStyle="bold"/>
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"/>
 
 
 

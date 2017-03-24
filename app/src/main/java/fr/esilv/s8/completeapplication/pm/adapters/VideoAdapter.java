@@ -13,10 +13,6 @@ import fr.esilv.s8.completeapplication.pm.interfaces.OnVideoSelectedListener;
 import fr.esilv.s8.completeapplication.pm.models.VideoList;
 import fr.esilv.s8.completeapplication.pm.viewholders.VideoViewHolder;
 
-/**
- * Created by Paul on 17/03/2017.
- */
-
 public class VideoAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     private final ArrayList<VideoList> videoList;
     private OnVideoSelectedListener onVideoSelectedListener;
@@ -24,7 +20,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoViewHolder> {
     public VideoAdapter(ArrayList<VideoList> videoList) {
         this.videoList = videoList;
     }
-
 
     public VideoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_list_video, parent, false);

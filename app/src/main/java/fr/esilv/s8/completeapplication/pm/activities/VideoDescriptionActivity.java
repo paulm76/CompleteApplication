@@ -19,7 +19,7 @@ public class VideoDescriptionActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String titleStr;
     private String descStr;
-    private String urlStr = "https://www.youtube.com/watch?v=";
+    private String urlStr;
     private TextView title;
     private TextView desc;
     private Button videoBtn;
@@ -38,7 +38,7 @@ public class VideoDescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_video_description);
         titleStr = getIntent().getStringExtra(TITLE);
         descStr = getIntent().getStringExtra(DESCRIPTION);
-        urlStr += getIntent().getStringExtra(URL);
+        urlStr = getIntent().getStringExtra(URL);
         title = (TextView) findViewById(R.id.title_desc);
         desc = (TextView) findViewById(R.id.desc_desc);
         videoBtn = (Button)findViewById(R.id.videoBtn);
@@ -47,7 +47,7 @@ public class VideoDescriptionActivity extends AppCompatActivity {
         final Context context = this;
         videoBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                //VideoActivity.start(context, urlStr);
+                VideoActivity.start(context, urlStr);
             }
         });
     }

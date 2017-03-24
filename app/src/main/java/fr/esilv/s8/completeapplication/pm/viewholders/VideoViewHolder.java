@@ -1,20 +1,17 @@
 package fr.esilv.s8.completeapplication.pm.viewholders;
 
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.net.MalformedURLException;
 
 import fr.esilv.s8.completeapplication.R;
 import fr.esilv.s8.completeapplication.pm.interfaces.OnVideoSelectedListener;
 import fr.esilv.s8.completeapplication.pm.models.VideoList;
-
-/**
- * Created by Paul on 17/03/2017.
- */
 
 public class VideoViewHolder extends RecyclerView.ViewHolder {
     private TextView title;
@@ -35,10 +32,10 @@ public class VideoViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(final VideoList videoList) throws MalformedURLException {
         title.setText(videoList.getSnippet().getTitle());
-        desc.setText(videoList.getSnippet().getDescription().toString());
+        desc.setText(videoList.getSnippet().getDescription());
         date.setText(videoList.getSnippet().getPublishedAt());
         author.setText(videoList.getSnippet().getChannelTitle());
-        thumbnail.setImageURI(Uri.parse(videoList.getSnippet().getThumbnails().getDefault().getUrl()));
+        Glide.with(itemView.getContext()).load(videoList.getSnippet().getThumbnails().getMedium().getUrl()).override(1200,400).into(thumbnail);
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,6 +52,7 @@ public class VideoListActivity extends AppCompatActivity implements OnVideoSelec
     }
 
     private void getVideos() {
+        research = research.replaceAll("\\s", "+");
         final StringRequest videoRequest = new StringRequest(YOUTUBE_URL + "?key=" + Constants.API_KEY + "&q=" + research + "&part=snippet&maxResults=15", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
